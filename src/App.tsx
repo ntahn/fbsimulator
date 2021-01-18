@@ -30,11 +30,12 @@ const App: React.FC = () => {
 		}
 		if (showArr.every((item) => item.id !== user.id) || showArr.length === 0) {
 			if (showArr.length === 2) {
-				// const deleteFirstElement = showArr.shift();
+				hiddenArr = [...hiddenArr, showArr[0]];
+				showArr.shift();
 				// ham shift return 1 cai userChat hoac undefined nen no d cho chay...
 				// hiddenArr = [...hiddenArr, deleteFirstElement];
-				hiddenArr = [...hiddenArr, showArr[0]];
-				showArr = deleteAnElementOfChatBoxArr(showArr, showArr[0].id);
+				// hiddenArr = [...hiddenArr, showArr[0]];
+				// showArr = deleteAnElementOfChatBoxArr(showArr, showArr[0].id);
 			}
 			showArr = [...showArr, user];
 			console.log(showArr);
